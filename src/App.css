@@ -10,12 +10,12 @@
 *{
   margin: 0;
   padding: 0;
-
 }
 
 .App {
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
 }
@@ -97,7 +97,6 @@
   margin-top: 2em;
   font-size: 1.1rem;
   max-width: 275px;
-  letter-spacing: 0.05rem;
 }
 
 .Content-left h1{
@@ -135,6 +134,14 @@ h3{
   max-width: 300px;
   display: flex;
   flex-wrap: wrap;
+}
+
+.Gifts-container-mobile{
+  display: none;
+}
+
+.Line{
+  display: none;
 }
 
 .Gifts-container div {
@@ -216,6 +223,13 @@ button:hover{
   margin-right: 4em;
 }
 
+.Menu-links a:nth-child(6){
+  display: none;
+}
+.Menu-links a:nth-child(7){
+  display: none;
+}
+
 .AboutCompany{
   font-weight: 700;
   color: #656566;
@@ -237,7 +251,7 @@ button:hover{
 
 .App-footer-right{
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
 }
 
 .Contacts{
@@ -249,16 +263,14 @@ button:hover{
   margin-bottom: 1em;
 }
 
-.Contacts-content{
-  direction: rtl;
-}
-
 .Contacts-content > * {
   display: block;
   margin-bottom: 1em;
 }
 
 .Footer-contacts-number{
+  display: flex;
+  flex-direction: row-reverse;
   font-family: 'Inter';
   font-weight: 500;
 }
@@ -266,6 +278,12 @@ button:hover{
 .Address{
   font-family: 'Inter';
   font-weight: 400;
+}
+
+.App-footer-icons{
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row-reverse;
 }
 
 .App-footer-icons a{
@@ -312,7 +330,6 @@ a{
   filter: blur(1px);
   position: absolute;
   display: block;
-  background: black;
   border-radius: 50%;
   height: 100px;
   width: 100px;
@@ -325,7 +342,6 @@ a{
   filter: blur(2px);
   position: absolute;
   display: block;
-  background: black;
   border-radius: 50%;
   height: 30px;
   width: 30px;
@@ -338,10 +354,321 @@ a{
   filter: blur(4px);
   position: absolute;
   display: block;
-  background: black;
   border-radius: 50%;
   height: 70px;
   width: 70px;
   background: radial-gradient(circle at 10px 10px, #866f97, #241734 60%);
   transform: translateX(1100px) translateY(-5px);
 }
+
+@media all and (max-width: 320px){
+
+  .Circle[circle-type="one"]{
+    display: none;
+  }
+
+  button{
+    display: none;
+  }
+
+  .Menu-links a:nth-child(8){
+    display: none;
+  }
+  .Menu-links a:nth-child(9){
+    display: none;
+  }
+
+  .Logo, .App-header-right{
+    display: none;
+  }
+
+  .App-header-links a:nth-child(5){
+    display: none;
+  }
+
+  .Gifts-container{
+    display: none;
+  }
+
+  .Circle[circle-type='two']{
+    z-index: -1;
+    filter: blur(6px);
+    position: absolute;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    background: radial-gradient(circle at 10px 10px, #90757b, #34171f 50%);
+    transform: translateX(30px) translateY(460px);
+  }
+
+  .Circle[circle-type='three']{
+    z-index: -1;
+    filter: blur(8px);
+    position: fixed;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    background: radial-gradient(circle at 10px 10px, #866f97, #241734 60%);
+    transform: translateX(300px) translateY(290px);
+  }
+
+  
+  .Background-light[light-type="one"]{
+    z-index: -1;
+    position: absolute;
+    box-shadow: -40px 450px 300px 200px rgba(89, 26, 26, 0.5);
+  }
+  
+  .Background-light[light-type="two"]{
+    z-index: -1;
+    position: absolute;
+    box-shadow: 480px 350px 300px 300px rgba(42, 25, 59, 0.5);
+  }
+
+  .Background-light[light-type="three"]{
+    z-index: -1;
+    position: absolute;
+    box-shadow: -150px 40px 300px 200px rgba(255, 255, 255, 0.1);
+  }
+
+  .App-header{
+    display: block;
+    padding: 0px 16px 0px 16px;
+    height: 55px;
+    background-color: rgba(14, 16, 20, 1);
+  }
+
+  .App-header-links{
+    width: 100vw;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    
+  }
+
+  .App-header-links a{
+    text-transform: uppercase;
+    font-family: 'Inter';
+    font-size: 12px;
+    font-weight: 500;
+    margin: 20px 8px 20px 8px;
+    color: rgba(228, 229, 234, 1);
+  }
+
+  .App-header-links a:nth-child(1){
+    margin-left: 0px;
+  }
+  .App-header-links a:nth-child(4){
+    margin-right: 0px
+  }
+
+  .Content{
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  .Content-left{
+    margin: 40px 34px 0px 14px;
+  }
+
+  .Content-left h1{
+    font-family: 'Inter';
+    line-height: 43.57px;
+    font-weight: 400;
+    font-size: 36px;
+  }
+
+  .Content-left span{
+    font-family: 'Inter';
+    font-size: 36px;
+    font-weight: 900;
+    line-height: 43.57px;
+  }
+
+  .Content-left p{
+    word-break: break-all;
+    font-family: "Montserrat";
+    font-size: 18px;
+    margin-top: 15px;
+    font-weight: 400;
+  }
+
+  .Content-right{
+    direction: ltr;
+  }
+
+  .Content-right h3{
+    font-family: "Inter";
+    font-weight: 500;
+    font-size: 18px;
+    margin: 45px 0px 0px 15px;
+  }
+
+  .Content-right h3 span{
+    text-transform: lowercase;
+    font-weight: 700;
+  }
+
+  .Content-right h3 span[gradient-type="accent-1"]{
+    background: linear-gradient(90deg, rgba(252,176,69,1) 50%, rgba(252,98,48,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .Content-right h3 span[gradient-type="accent-2"]{
+    background: linear-gradient(90deg, rgba(252,176,69,1) 50%, rgba(253,146,61,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .Gifts-container-mobile{
+    height: 46px;
+    margin: 20px 0px 0px 16px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .Gifts-container-mobile-left{
+    margin-right: 10px;
+  }
+
+  .Gifts-container-mobile-left div{
+    display: flex;
+    align-items: center;
+  }
+
+  .Gifts-container-mobile-right div{
+    display: flex;
+    align-items: center;
+  }
+  
+  .Gifts-container-mobile span{
+    letter-spacing: 0.05em;
+    display: block;
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 13px;
+    color: #E4E5EA;
+  }
+
+  .Gifts-container-mobile > div > div{
+    margin-bottom: 14px;
+  }
+
+  .Line{
+    display: block;
+    width: 10px;
+    height: 0px;
+    margin: 0px 5px 0px 0px;
+    border: 1px solid;
+    border-image: linear-gradient(90deg, #FCB045 36.99%, #FD1D1D 100%) 1;
+  }
+  
+  .App-footer{
+    background-color: rgba(14, 16, 20, 1);
+    display: flex;
+    flex-direction: column;
+    margin: 55px 0px 0px 0px;
+    padding: 0px 16px 0px 16px;
+  }
+
+  .App-footer-left{
+      display: block;
+      margin: 45px 0px 0px 0px;
+  }
+  
+  .App-footer-left > * {
+    margin: 0;
+    direction: ltr;
+  }
+
+  .AboutCompany{
+    margin: 0px 0px 20px 0px;
+    font-family: "Inter";
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+  }
+
+  .About-company-links a{
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 14px;
+    margin: 0px 0px 10px 0px;
+  }
+
+  .Menu{
+    font-family: "Inter";
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    margin: 30px 0px 20px 0px
+  }
+
+  .Menu-links a{
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 14px;
+    max-width: 124px;
+    margin: 0px 0px 9px 0px;
+  }
+
+  .Menu-links a:nth-child(6){
+    display: block;
+  }
+  .Menu-links a:nth-child(7){
+    display: block;
+  }
+
+  .Contacts{
+    font-family: "Inter";
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    margin: 30px 0px 20px 0px;
+    direction: ltr;
+  }
+
+  .Contacts-content{
+    direction: ltr;
+    margin-bottom: 50px;
+  }
+
+  .Footer-contacts-number{
+    display: block;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .App-footer-icons{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+  }
+
+  .App-footer-icons a{
+    margin: 0px 10px 0px 0px
+  }
+
+  .Address{
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 14px;
+  }
+
+  .Confidentiality{
+    display: block;
+    margin: 0;
+  }
+
+  .Confidentiality span{
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 12px;
+  }
+}
+
